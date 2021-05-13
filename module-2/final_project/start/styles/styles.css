@@ -33,3 +33,11 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+header .logoContainer{
+   width:300px;
+   margin:0 auto; 
+}
+img{
+    max-width:100%;
+}
