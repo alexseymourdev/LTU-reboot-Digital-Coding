@@ -41,3 +41,7 @@ header .logoContainer{
 img{
     max-width:100%;
 }
+.copyrightContainer{
+    font-size:22px;
+    text-align: center;
+}
