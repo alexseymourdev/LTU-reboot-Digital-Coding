@@ -45,3 +45,12 @@ img{
     font-size:22px;
     text-align: center;
 }
+.imageContainer{
+    display:flex;
+    flex-wrap: wrap;
+}
+.imageContainer .imageWrap{
+    padding:20px;
+    width:calc(25% - 40px);
+    text-align: center;
+}
