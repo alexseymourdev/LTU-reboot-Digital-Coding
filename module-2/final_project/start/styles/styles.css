@@ -54,3 +54,7 @@ img{
     width:calc(25% - 40px);
     text-align: center;
 }
+.filter{
+	padding:10px;
+	border:1px solid red;
+}
