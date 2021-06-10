@@ -21,11 +21,14 @@ function showProductName(){
 
 showProductName();
 
-function totalPrice(productPrice,productQuantity){
+function totalPrice(productPrice=10,productQuantity){
     console.log(productPrice * productQuantity);
 }
 
+totalPrice(undefined,5);
 totalPrice(10,5);
+totalPrice(15,5);
+totalPrice(20,5);
 
 // function checkAvailability(productInStock){
 //     console.log(productInStock);
@@ -42,9 +45,6 @@ totalPrice(10,5);
 var checkAvailability = productInStock => console.log(productInStock);
 
 checkAvailability(5);
-
-
-var number = 25;
 
 function checkNumber(number){
     if(number < 10){
@@ -237,7 +237,7 @@ function totalPriceOfShopping(arrCart,objCoupon){
                 break;
                 case 'flat':
                     if(blnApplyDiscount){
-                        currentItemPrice = currentItemPrice - objCoupon.value;
+                        currentItemPrice = currentItemPrice - (objCoupon.value * currentItem.quantity);
                     }
                 break;
             }
@@ -261,3 +261,20 @@ objCouponData = {
 }
 
 console.log(totalPriceOfShopping(shoppingCart,objCouponData));
+
+function itemsOfType(arrCart){
+    objItems = {};
+    for(arrCartKey=0; arrCartKey < arrCart.length; arrCartKey++){
+        let currentItem = arrCart[arrCartKey];
+        if(objItems[currentItem.type]){
+            objItems[currentItem.type] = objItems[currentItem.type] + currentItem.quantity;
+        } else {
+            objItems[currentItem.type] = currentItem.quantity;
+        }
+        // console.log(currentItem);
+        // console.log(objItems);
+    }
+    return objItems;
+}
+
+console.log(itemsOfType(shoppingCart));
